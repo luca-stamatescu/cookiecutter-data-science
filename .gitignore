@@ -7,3 +7,10 @@ docs/site/
 .cache/*
 tests/__pycache__/*
 *.pytest_cache/
+.idea/cookiecutter-data-science.iml
+
+.idea/modules.xml
+
+.idea/vcs.xml
+
+.idea/workspace.xml
