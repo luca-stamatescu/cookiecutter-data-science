@@ -12,6 +12,7 @@ ${VENV}:
 	python3 -m venv $@
 
 install_requirements: requirements.txt
+    $(BIN)pip install –upgrade pip
 	$(BIN)pip install -r requirements.txt
 
 download_data:
