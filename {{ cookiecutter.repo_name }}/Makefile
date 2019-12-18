@@ -14,7 +14,7 @@ ${VENV}:
 install_requirements: requirements.txt
 	$(BIN)pip install --upgrade pip
 	$(BIN)pip install -r requirements.txt
-	pre-commit install
+	$(BIN)pre-commit install
 
 download_data:
 
