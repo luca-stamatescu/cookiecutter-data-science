@@ -4,7 +4,7 @@
 VENV = .venv
 BIN = ${VENV}/bin/
 
-all: setup
+all: setup docs tests
 
 setup: ${VENV} install_requirements
 
@@ -12,8 +12,9 @@ ${VENV}:
 	python3 -m venv $@
 
 install_requirements: requirements.txt
-	pip install --upgrade pip
+	$(BIN)pip install --upgrade pip
 	$(BIN)pip install -r requirements.txt
+	pre-commit install
 
 download_data:
 
@@ -26,3 +27,11 @@ submission:
 # Documentation
 docs: docs/conf.py docs/index.rst
 	sphinx-build -b html docs docs/_build
+
+docker:
+	-docker rm -f $(shell docker ps -aq)
+	docker build --tag nameofdockerimage .
+	docker run --name temporarycontainername nameofdockerimage
+
+tests:
+	pytest
