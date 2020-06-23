@@ -26,7 +26,7 @@ submission:
 
 # Documentation
 docs: docs/conf.py docs/index.rst
-	sphinx-build -b html docs docs/_build
+	$(BIN)sphinx-build -b html docs docs/_build
 
 docker:
 	-docker rm -f $(shell docker ps -aq)

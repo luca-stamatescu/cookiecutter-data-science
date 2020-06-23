@@ -1,2 +1,4 @@
-Sphinx
-Jupyter
+sphinx
+jupyter
+jupyterlab
+pre-commit
